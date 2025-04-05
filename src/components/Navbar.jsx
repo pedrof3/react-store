@@ -1,15 +1,44 @@
 import { Search, ShoppingBag } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+    const navigate = useNavigate();
     return (
         <div className="flex justify-around py-4 items-center bg-pink-800">
-            <p className="font-bold text-3xl text-green-500">JALO</p>
+            <p
+                className="font-bold text-3xl cursor-pointer select-none text-green-500"
+                onClick={() => {
+                    navigate("/");
+                }}
+            >
+                JALO
+            </p>
             <ul className="flex justify-between gap-8 font-medium text-white">
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-                <li>Item 4</li>
-                <li>Item 5</li>
+                <li
+                    className="cursor-pointer select-none"
+                    onClick={() => {
+                        navigate("/products");
+                    }}
+                >
+                    Produtos
+                </li>
+                <li className="cursor-pointer select-none">Promoções</li>
+                <li
+                    className="cursor-pointer select-none"
+                    onClick={() => {
+                        navigate("/about");
+                    }}
+                >
+                    Sobre
+                </li>
+                <li
+                    className="cursor-pointer select-none"
+                    onClick={() => {
+                        navigate("/contact");
+                    }}
+                >
+                    Contato
+                </li>
             </ul>
             <div className="flex items-center gap-8">
                 <div className="flex">
@@ -19,11 +48,11 @@ export default function Navbar() {
                         placeholder="Procure..."
                         className="rounded-l-xl p-2 bg-white"
                     />
-                    <div className="rounded-r-xl bg-green-500 p-2">
+                    <div className="rounded-r-xl p-2 bg-green-500 hover:cursor-pointer">
                         <Search className="text-white" />
                     </div>
                 </div>
-                <ShoppingBag className="text-white" />
+                <ShoppingBag className="hover:cursor-pointer text-white" />
             </div>
         </div>
     );

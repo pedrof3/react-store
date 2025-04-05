@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Home() {
+    const navigate = useNavigate();
     return (
         <div className="flex flex-col p-40">
             <p className="text-6xl font-extrabold">JALO</p>
@@ -7,7 +10,12 @@ export default function Home() {
                 <button className="text-md font-medium px-4 py-1 rounded-2xl border-2 cursor-pointer border-green-500 hover:bg-green-500">
                     CADASTRAR
                 </button>
-                <button className="text-md font-medium px-4 py-1 rounded-2xl border-2 cursor-pointer border-green-500 hover:bg-green-500">
+                <button
+                    className="text-md font-medium px-4 py-1 rounded-2xl border-2 cursor-pointer border-green-500 hover:bg-green-500"
+                    onClick={() => {
+                        navigate("/products");
+                    }}
+                >
                     PRODUTOS
                 </button>
             </div>

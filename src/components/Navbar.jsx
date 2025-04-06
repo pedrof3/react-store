@@ -20,16 +20,16 @@ export default function Navbar() {
                         navigate("/products");
                     }}
                 >
-                    Produtos
+                    Products
                 </li>
-                <li className="cursor-pointer select-none">Promoções</li>
+                <li className="cursor-pointer select-none">Promotion</li>
                 <li
                     className="cursor-pointer select-none"
                     onClick={() => {
                         navigate("/about");
                     }}
                 >
-                    Sobre
+                    About
                 </li>
                 <li
                     className="cursor-pointer select-none"
@@ -37,7 +37,7 @@ export default function Navbar() {
                         navigate("/contact");
                     }}
                 >
-                    Contato
+                    Contact
                 </li>
             </ul>
             <div className="flex items-center gap-8">
